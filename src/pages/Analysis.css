@@ -1,0 +1,28 @@
+.analysis-page {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  background-color: #f4f9ff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+
+.analysis-page h2 {
+  text-align: center;
+  color: #0b3d91;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+.analysis-chart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.analysis-chart canvas {
+  max-width: 100%;
+  height: 300px !important;
+  width: 100% !important;
+}

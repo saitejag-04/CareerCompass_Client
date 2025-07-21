@@ -1,0 +1,149 @@
+body {
+  background-color: #f2f6fc;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.home-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  color: #333;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+.job-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.job-form input,
+.job-form select {
+  flex: 1;
+  min-width: 150px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.job-form button {
+  padding: 0.6rem 1rem;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.job-form button:hover {
+  background-color: #2c80bd;
+}
+
+.job-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(47%, 1fr));
+  gap: 1.5rem;
+}
+
+.job-item {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  border-left: 5px solid #3498db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s;
+}
+
+.job-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.job-item strong {
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.job-item span {
+  display: block;
+  margin: 0.2rem 0;
+  color: #555;
+}
+
+.job-item a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.job-item a:hover {
+  text-decoration: underline;
+}
+
+.job-item button {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.job-item button:first-of-type {
+  background-color: #f39c12;
+  color: white;
+}
+
+.job-item button:first-of-type:hover {
+  background-color: #e67e22;
+}
+
+.job-item button:last-of-type {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.job-item button:last-of-type:hover {
+  background-color: #c0392b;
+}
+
+/* .job-card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+  background-color: white;
+} */
+
+.job-card.highlight {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: border-color 0.3s ease;
+  border-color: #ff6f00;
+}
+
+
+.success-msg {
+  background-color: #dff0d8;
+  color: #3c763d;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #d6e9c6;
+  border-radius: 6px;
+}
