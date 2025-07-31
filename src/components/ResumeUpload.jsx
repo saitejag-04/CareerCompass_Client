@@ -24,7 +24,13 @@ const ResumeUpload = ({ onUploadSuccess = () => {} }) => {
 
     try {
       // const res = await axios.post('/upload-resume', formData);
-      const res = await axios.post('/resumes/upload-resume', formData);
+      // const res = await axios.post('/resumes/upload-resume', formData);
+      const token = localStorage.getItem('token'); 
+      const res = await axios.post('/resumes/upload-resume', formData, {
+        headers: {
+          Authorization: `Bearer ${token}` 
+        }
+      });
 
       alert('Resume uploaded successfully!');
       setMessage(`Uploaded: ${res.data.name}`);

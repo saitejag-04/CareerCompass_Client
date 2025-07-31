@@ -13,9 +13,10 @@ const JobCard = ({ job, onEdit, onDelete, isHighlighted }) => {
       </span><br />
       <span>Notes: {job.notes}</span><br />
 
-
-       {job.resume && (
-        <a href={job.resume}>View Attached Resume</a>
+      {job.resume && (
+        <a href={job.resume} target="_blank" rel="noopener noreferrer">
+          View Attached Resume
+        </a>
       )}
 
       <button onClick={() => onEdit(job)}>Edit</button>

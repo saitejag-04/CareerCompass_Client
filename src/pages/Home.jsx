@@ -131,9 +131,22 @@ const Home = () => {
   fetchResumes(); // for dropDown
 }, []);
 
+// const fetchResumes = async () => {
+//   try {
+//     const res = await axios.get('/resumes');
+//     setResumes(res.data);
+//   } catch (error) {
+//     console.error('Failed to fetch resumes:', error);
+//   }
+// };
 const fetchResumes = async () => {
   try {
-    const res = await axios.get('/resumes');
+    const token = localStorage.getItem('token'); 
+    const res = await axios.get('/resumes', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
     setResumes(res.data);
   } catch (error) {
     console.error('Failed to fetch resumes:', error);

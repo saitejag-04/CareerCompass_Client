@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from '../api/axios';
 import './Auth.css';
 
-const apiURL = "https://careercompass-server-lxbr.onrender.com" 
+
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,9 +12,8 @@ const Login = ({ onLogin }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      console.log(apiURL);
-      const res = await axios.post(`${apiURL}/api/auth/login`, { email, password });
-      // const res = await axios.post('/auth/login', { email, password });
+
+      const res = await axios.post('/auth/login', { email, password });
       localStorage.setItem('token', res.data.token);
       onLogin();
       navigate('/');

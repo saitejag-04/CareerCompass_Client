@@ -5,16 +5,33 @@ import './ResumePage.css';
 
 const ResumePage = () => {
   const [resumes, setResumes] = useState([]);
-
+  
   const fetchResumes = async () => {
-    try {
-      const res = await axios.get('/resumes');
-      setResumes(res.data);
-    } catch (error) {
-      console.error('Error fetching resumes:', error);
-    }
-  };
+  try {
+    const res = await axios.get('/resumes');
+    setResumes(res.data);
+  } catch (error) {
+    console.error('Error fetching resumes:', error);
+  }
+};
 
+  // const fetchResumes = async () => {
+  //   try {
+  //     const token = localStorage.getItem('token');
+  //     // const res = await axios.get('/resumes');
+  //     const res = await fetch('/resumes', {
+  //     headers: {
+  //       Authorization: `Bearer ${token}`
+  //     }
+  //   });
+  //   const data = await res.json(); 
+  //   setResumes(data);
+  //     // setResumes(res.data);
+  //   } catch (error) {
+  //     console.error('Error fetching resumes:', error);
+  //   }
+  // };
+  
   useEffect(() => {
     fetchResumes();
   }, []);
@@ -25,7 +42,13 @@ const ResumePage = () => {
   const handleDelete = async (id) => {
   if (!window.confirm('Are you sure you want to delete this resume?')) return;
   try {
-    await axios.delete(`/resumes/${id}`);
+    const token = localStorage.getItem('token'); 
+    await axios.delete(`/resumes/${id}`, {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+    // await axios.delete(`/resumes/${id}`);
     setResumes(prev => prev.filter(resume => resume._id !== id));
   } catch (err) {
     alert('Failed to delete resume');

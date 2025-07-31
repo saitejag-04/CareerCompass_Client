@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import axios from '../api/axios';
 import { useNavigate } from 'react-router-dom';
-import './Auth.css';
-const apiURL = "https://careercompass-server-lxbr.onrender.com" 
+import './Auth.css'; 
 
 const Register = ({ onRegister }) => {
   const [name, setName] = useState('');
@@ -13,7 +12,7 @@ const Register = ({ onRegister }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${apiURL}/api/auth/register`, {
+      const res = await axios.post(`/auth/register`,{
         name,
         email,
         password,
